@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFInventory.MVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="505" d:DesignWidth="700"
+             d:DesignHeight="505" d:DesignWidth="900"
              Background="#464566">
     <Grid x:Name="grid">
         <TextBlock Grid.Row="1"
