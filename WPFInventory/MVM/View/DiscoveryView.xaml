@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#464566">
-    <Grid>
+    <Grid x:Name="grid">
         <TextBlock Grid.Row="1"
                    Text="Mobile Phone Inventory System Categories"
                    Foreground="White"
@@ -15,9 +15,70 @@
                    FontSize="28"
                    HorizontalAlignment="Center"
                    Margin="0,20,0,0"/>
-        <DataGrid HorizontalAlignment="Left" Height="130" 
-                  Margin="120,95,0,0" VerticalAlignment="Top" 
-                  Width="604" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged"/>
+        <StatusBar HorizontalAlignment="Center" Height="23" Margin="0,63,0,0" VerticalAlignment="Top" Width="800"/>
+        <Label Content="Category ID" 
+               HorizontalAlignment="Left" 
+               Height="32" Margin="10,91,0,0" 
+               VerticalAlignment="Top" Width="83" 
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
+               Background="WhiteSmoke"/>
+        <TextBox HorizontalAlignment="Left" Height="32" 
+                 Margin="98,91,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="81"
+                 Background="WhiteSmoke"/>
+
+        <Label Content="Category Name" 
+               HorizontalAlignment="Left" 
+               Height="32" Margin="184,91,0,0" 
+               VerticalAlignment="Top" Width="93" 
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
+               Background="WhiteSmoke"/>
+        <TextBox HorizontalAlignment="Left" Height="32" 
+                 Margin="282,91,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="159"
+                 Background="WhiteSmoke"/>
+
+        <Label Content="Quantity" 
+               HorizontalAlignment="Left" 
+               Height="32" Margin="446,91,0,0" 
+               VerticalAlignment="Top" Width="93" 
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
+               Background="WhiteSmoke"/>
+        <TextBox HorizontalAlignment="Left" Height="32" 
+                 Margin="544,91,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="72"
+                 Background="WhiteSmoke"/>
+        <Label Content="Measurement" 
+            HorizontalAlignment="Left" 
+            Height="32" Margin="621,91,0,0" 
+            VerticalAlignment="Top" Width="93" 
+            HorizontalContentAlignment="Center" 
+            VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
+            Background="WhiteSmoke"/>
+        <TextBox HorizontalAlignment="Left" Height="32" 
+            Margin="717,90,0,0" TextWrapping="Wrap" 
+            Text="" VerticalAlignment="Top" Width="82"
+            Background="WhiteSmoke"/>
+        <Button Content="Add" HorizontalAlignment="Center" 
+                Height="40" Margin="0,128,0,0" VerticalAlignment="Top" Width="134"
+                FontFamily="Arial"/>
+        <Grid>
+            <DataGrid x:Name="CategoryDG"
+                      ItemsSource="{Binding Path = categorytbl}"
+                      HorizontalAlignment="Center" Height="226" Margin="0,203,0,0" 
+                      VerticalAlignment="Top" Width="748" d:ItemsSource="{d:Binding Source}" 
+                      SelectionChanged="CategoryDG_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Category ID" Binding="{Binding  categoryID}" IsReadOnly="True"  />
+                    <DataGridTextColumn Header="Category Name" Binding="{Binding  category_name}" IsReadOnly="True"  />
+                    <DataGridTextColumn Header="Measurements" Binding="{Binding  measurement}" IsReadOnly="True"  />
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding  quantity}" IsReadOnly="True"  />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 
 
     </Grid>

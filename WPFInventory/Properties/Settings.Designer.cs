@@ -33,5 +33,29 @@ namespace WPFInventory.Properties {
                 return ((string)(this["InventorydbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Ashley\\source\\repos\\" +
+            "WPFInventory\\WPFInventory\\Data\\inventorydb.mdf;Integrated Security=True")]
+        public string categorydb {
+            get {
+                return ((string)(this["categorydb"]));
+            }
+            set {
+                this["categorydb"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Data\\inventor" +
+            "ydb.mdf;Integrated Security=True")]
+        public string inventorydbConnectionCategory {
+            get {
+                return ((string)(this["inventorydbConnectionCategory"]));
+            }
+        }
     }
 }

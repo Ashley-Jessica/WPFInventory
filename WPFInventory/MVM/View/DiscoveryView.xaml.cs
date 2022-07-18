@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.Entity.Core.Objects;
+using MySql.Data.MySqlClient;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace WPFInventory.MVM.View
 {
@@ -20,12 +25,38 @@ namespace WPFInventory.MVM.View
     /// </summary>
     public partial class DiscoveryView : UserControl
     {
+      
+
         public DiscoveryView()
         {
             InitializeComponent();
+            LoadGrid();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void LoadGrid()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Ashley\\source\\repos\\WPFInventory\\WPFInventory\\db_test.mdf;Integrated Security=True"))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM categorytbl;", conn);
+                    DataTable dt = new DataTable();
+                    conn.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+                    conn.Close();
+                    CategoryDG.ItemsSource = dt.DefaultView;
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Reading Failed: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+
+        private void CategoryDG_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
