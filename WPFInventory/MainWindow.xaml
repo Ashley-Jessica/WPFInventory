@@ -63,6 +63,7 @@
                              FontSize="15"
                              FontFamily="Bahnschrift Light Condensed"
                              Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ProductsViewCommand}"
                              />
                 <RadioButton Content="Inventory Control"
                              Height="50"

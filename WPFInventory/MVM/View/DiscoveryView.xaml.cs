@@ -54,11 +54,5 @@ namespace WPFInventory.MVM.View
             }
         }
 
-
-
-        private void CategoryDG_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
