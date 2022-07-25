@@ -20,7 +20,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Border Height="390" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="#25274D">
+        <Border Height="389" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="#25274D">
 
         </Border>
 
