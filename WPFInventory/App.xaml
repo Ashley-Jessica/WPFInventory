@@ -4,13 +4,14 @@
              xmlns:local="clr-namespace:WPFInventory"
              xmlns:viewModel="clr-namespace:WPFInventory.MVM.ViewModel"
              xmlns:view="clr-namespace:WPFInventory.MVM.View" 
-             StartupUri="MainWindow.xaml">
+             StartupUri="LOGIN.xaml">
     
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/LoginbtnTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -25,6 +26,12 @@
                 <view:ProductsView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:DeliveriesViewModel}">
+                <view:DeliveriesView/>
+            </DataTemplate>
+
         </ResourceDictionary>
+
     </Application.Resources>
+
 </Application>

@@ -10,11 +10,11 @@
                             Width="200" Height="40">
 
                         <Grid>
-                            <Rectangle StrokeThickness="1">
+                            <Rectangle StrokeThickness="0">
                             </Rectangle>
                             <TextBox Margin="1"
                                      Text="{TemplateBinding Text}"
-                                     BorderThickness="1"
+                                     BorderThickness="0"
                                      Background="#F6F6F2"
                                      VerticalContentAlignment="Center"
                                      Padding="5"

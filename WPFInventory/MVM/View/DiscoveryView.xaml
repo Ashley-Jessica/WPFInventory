@@ -8,7 +8,7 @@
              d:DesignHeight="505" d:DesignWidth="700"
              Background="#464566">
     <Grid x:Name="grid">
-        <TextBlock Grid.Row="1"
+        <TextBlock
                    Text="Mobile Phone Inventory System Categories"
                    Foreground="White"
                    FontFamily="Bahnschrift Light Condensed"
@@ -23,7 +23,8 @@
                HorizontalContentAlignment="Center" 
                VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
                Background="WhiteSmoke" RenderTransformOrigin="1.123,1.056"/>
-        <TextBox HorizontalAlignment="Left" Height="32" 
+        <TextBox x:Name="CatID"
+                 HorizontalAlignment="Left" Height="32" 
                  Margin="120,106,0,0" TextWrapping="Wrap" 
                  Text="" VerticalAlignment="Top" Width="197"
                  Background="WhiteSmoke"/>
@@ -35,11 +36,11 @@
                HorizontalContentAlignment="Center" 
                VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
                Background="WhiteSmoke"/>
-        <TextBox HorizontalAlignment="Left" Height="32" 
+        <TextBox x:Name="CatName"
+                 HorizontalAlignment="Left" Height="32" 
                  Margin="120,145,0,0" TextWrapping="Wrap" 
                  Text="" VerticalAlignment="Top" Width="197"
                  Background="WhiteSmoke"/>
-
         <Label Content="Quantity" 
                HorizontalAlignment="Left" 
                Height="32" Margin="369,107,0,0" 
@@ -47,7 +48,8 @@
                HorizontalContentAlignment="Center" 
                VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
                Background="WhiteSmoke"/>
-        <TextBox HorizontalAlignment="Left" Height="32" 
+        <TextBox x:Name="quantity"
+                 HorizontalAlignment="Left" Height="32" 
                  Margin="481,107,0,0" TextWrapping="Wrap" 
                  Text="" VerticalAlignment="Top" Width="198"
                  Background="WhiteSmoke"/>
@@ -58,20 +60,31 @@
             HorizontalContentAlignment="Center" 
             VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
             Background="WhiteSmoke"/>
-        <Button Content="Add" HorizontalAlignment="Center" 
-                Height="29" Margin="0,208,0,0" VerticalAlignment="Top" Width="102"
+        <Button Content="Insert"
+                HorizontalAlignment="Left" 
+                Height="29" Margin="168,208,0,0" VerticalAlignment="Top" Width="102"
                 Background="WhiteSmoke"
-                FontFamily="Arial"/>
-        <Grid>
-            <DataGrid x:Name="CategoryDG"
-                      HorizontalAlignment="Center" Height="220" Margin="0,252,0,0" 
-                      VerticalAlignment="Top" Width="562">
-            </DataGrid>
-        </Grid>
-        <TextBox HorizontalAlignment="Left" Height="32" 
+                FontFamily="Arial" Click="Button_Click"/>
+        <TextBox x:Name="measurement"
+            HorizontalAlignment="Left" Height="32" 
             Margin="481,145,0,0" TextWrapping="Wrap" 
             Text="" VerticalAlignment="Top" Width="198"
             Background="WhiteSmoke"/>
+        <Button Content="Update" HorizontalAlignment="Left" 
+            Height="29" Margin="283,208,0,0" VerticalAlignment="Top" Width="102"
+            Background="WhiteSmoke"
+            FontFamily="Arial" Click="Button_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" 
+                Height="29" VerticalAlignment="Top" Width="102"
+                Background="WhiteSmoke"
+                FontFamily="Arial" Click="Button_Click" Margin="409,206,0,0"/>
+
+
+        <DataGrid x:Name="CategoryDG"
+                      HorizontalAlignment="Center" Height="220" Margin="0,252,0,0" 
+                      VerticalAlignment="Top" Width="562">
+        </DataGrid>
+
 
 
     </Grid>

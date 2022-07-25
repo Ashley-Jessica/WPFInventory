@@ -54,5 +54,21 @@ namespace WPFInventory.MVM.View
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Ashley\\source\\repos\\WPFInventory\\WPFInventory\\db_test.mdf;Integrated Security=True");
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("Insert INTO categorytbl(Category ID, Category Name, quantity, measurement) VALUES (@Category ID, @Category Name, @quantity, @measurement)", conn);
+            cmd.Parameters.AddWithValue("@Category ID", int.Parse(CatID.Text));
+            cmd.Parameters.AddWithValue("@Category Name", CatName.Text);
+            cmd.Parameters.AddWithValue("@quantity", quantity.Text);
+            cmd.Parameters.AddWithValue("@measurement", measurement.Text);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Successfully Added.");
+        }
     }
 }

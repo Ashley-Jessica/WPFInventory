@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="WPFInventory.MVM.View.DeliveriesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFInventory.MVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="505" d:DesignWidth="700"
+             Background="WhiteSmoke">
+    <Grid>
+        <TextBlock Text="Deliveries"
+                   HorizontalAlignment="Center" Height="30" 
+                   VerticalAlignment="Top" 
+                   Width="700" Background="#464566" 
+                   FontFamily="Bahnschrift" FontSize="24"
+                   Foreground="WhiteSmoke" TextAlignment="Center" Margin="0,20,0,0" IsEnabled="False"/>
+        <DataGrid HorizontalAlignment="Left" 
+                  Height="382" Margin="317,83,0,0" 
+                  VerticalAlignment="Top" Width="363"/>
+        <Label Content="Delivery ID" HorizontalAlignment="Left" 
+               Margin="14,122,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="130,124,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="153" 
+                 FontFamily="Bahnschrift" FontSize="16" Height="25"/>
+        <Label Content="Delivery Type" HorizontalAlignment="Left" 
+            Margin="14,165,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="130,167,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" 
+                 Width="153" FontFamily="Bahnschrift" FontSize="16" Height="25"/>
+        <Label Content="Product ID" HorizontalAlignment="Left" 
+            Margin="14,210,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="130,212,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="153" 
+                 FontFamily="Bahnschrift" FontSize="16" Height="25"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" 
+            Margin="14,250,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="130,253,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="153" FontFamily="Bahnschrift" 
+                 FontSize="16" Height="26"/>
+        <Label Content="Date Received" HorizontalAlignment="Left" 
+            Margin="14,297,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="130,300,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="153" FontFamily="Bahnschrift" 
+                 FontSize="16" Height="26"/>
+        <Label Content="Date Delivered" HorizontalAlignment="Left" 
+            Margin="14,345,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="130,345,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="153" FontFamily="Bahnschrift" 
+                 FontSize="16" Height="26"/>
+        <Button Content="Insert" HorizontalAlignment="Left" Height="32" 
+                Margin="23,397,0,0" VerticalAlignment="Top" Width="79" 
+                FontFamily="Arial" FontSize="14"
+                Background="#464566"
+                Foreground="WhiteSmoke"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="32" 
+                Margin="126,397,0,0" VerticalAlignment="Top" Width="78" 
+                FontFamily="Arial" FontSize="14"
+                Background="#464566"
+                Foreground="WhiteSmoke"/>
+        <Button Content="Update" HorizontalAlignment="Left" Height="32" 
+                Margin="221,397,0,0" VerticalAlignment="Top" Width="79" 
+                FontFamily="Arial" FontSize="14" Background="#464566"
+                Foreground="WhiteSmoke"/>
+
+    </Grid>
+</UserControl>

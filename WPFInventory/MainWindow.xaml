@@ -65,12 +65,13 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding ProductsViewCommand}"
                              />
-                <RadioButton Content="Inventory Control"
+                <RadioButton Content="Deliveries"
                              Height="50"
                              Foreground="WhiteSmoke"
                              FontFamily="Bahnschrift Light Condensed"
                              FontSize="15"
                              Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DeliveriesViewCommand}"
                              />
                 <RadioButton Content="Logs"
                              Height="50"
