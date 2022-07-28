@@ -11,8 +11,8 @@ namespace WPFInventory.MVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand DiscoveryViewCommand { get; set; }
         public RelayCommand ProductsViewCommand { get; set; }
-
         public RelayCommand DeliveriesViewCommand { get; set; }
+        public RelayCommand UsersViewCommand { get; set; }
 
         public HomeViewModel HomeVM{ get; set; }
 
@@ -21,6 +21,7 @@ namespace WPFInventory.MVM.ViewModel
         public ProductsViewModel ProductsVM { get; set; }
 
         public DeliveriesViewModel DeliveryVM { get; set; }
+        public UsersViewModel UsersVM { get; set; }
 
         private object _currentView;
 
@@ -39,6 +40,7 @@ namespace WPFInventory.MVM.ViewModel
             DiscoveryVM = new DiscoveryViewModel();
             ProductsVM = new ProductsViewModel();
             DeliveryVM = new DeliveriesViewModel();
+            UsersVM = new UsersViewModel();
 
             CurrentView = HomeVM;
 
@@ -60,6 +62,11 @@ namespace WPFInventory.MVM.ViewModel
             DeliveriesViewCommand = new RelayCommand(o =>
             {
                 CurrentView = DeliveryVM;
+            });
+
+            UsersViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = UsersVM;
             });
         }
     }

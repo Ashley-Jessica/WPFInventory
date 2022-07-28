@@ -86,6 +86,7 @@
                              FontFamily="Bahnschrift Light Condensed"
                              FontSize="15"
                              Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding UsersViewCommand}"
                              />
             </StackPanel>
 

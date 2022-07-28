@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFInventory.MVM.View"
+             xmlns:input="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="505" d:DesignWidth="900"
              Background="#464566">
@@ -15,40 +16,42 @@
                    FontSize="28"
                    HorizontalAlignment="Center"
                    Margin="0,20,0,0"/>
-        <StatusBar HorizontalAlignment="Center" Height="23" Margin="0,63,0,0" VerticalAlignment="Top" Width="800"/>
-        <Label Content="Category ID" 
+        <StatusBar HorizontalAlignment="Center" Height="23" Margin="0,63,0,0" 
+                   VerticalAlignment="Top" Width="800"/>
+
+            <Label Content="Category ID" 
                HorizontalAlignment="Right" 
                Height="32" Margin="0,105,597,0" 
                VerticalAlignment="Top" Width="92" 
                HorizontalContentAlignment="Center" 
                VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
                Background="WhiteSmoke" RenderTransformOrigin="1.123,1.056"/>
-        <TextBox x:Name="CatID"
+            <TextBox x:Name="CatID"
                  HorizontalAlignment="Left" Height="32" 
                  Margin="120,106,0,0" TextWrapping="Wrap" 
                  Text="" VerticalAlignment="Top" Width="197"
                  Background="WhiteSmoke"/>
-
-        <Label Content="Category Name" 
+            <Label Content="Category Name" 
                HorizontalAlignment="Left" 
                Height="32" Margin="10,145,0,0" 
                VerticalAlignment="Top" Width="93" 
                HorizontalContentAlignment="Center" 
                VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
                Background="WhiteSmoke"/>
-        <TextBox x:Name="CatName"
+            <TextBox x:Name="CatName"
                  HorizontalAlignment="Left" Height="32" 
                  Margin="120,145,0,0" TextWrapping="Wrap" 
                  Text="" VerticalAlignment="Top" Width="197"
                  Background="WhiteSmoke"/>
-        <Label Content="Quantity" 
+
+            <Label Content="Quantity" 
                HorizontalAlignment="Left" 
                Height="32" Margin="369,107,0,0" 
                VerticalAlignment="Top" Width="93" 
                HorizontalContentAlignment="Center" 
                VerticalContentAlignment="Center" FontFamily="Bahnschrift" 
                Background="WhiteSmoke"/>
-        <TextBox x:Name="quantity"
+            <TextBox x:Name="quantity"
                  HorizontalAlignment="Left" Height="32" 
                  Margin="481,107,0,0" TextWrapping="Wrap" 
                  Text="" VerticalAlignment="Top" Width="198"
@@ -64,7 +67,7 @@
                 HorizontalAlignment="Left" 
                 Height="29" Margin="168,208,0,0" VerticalAlignment="Top" Width="102"
                 Background="WhiteSmoke"
-                FontFamily="Arial" Click="Button_Click"/>
+                FontFamily="Arial" Click="ButtonAdd_Click"/>
         <TextBox x:Name="measurement"
             HorizontalAlignment="Left" Height="32" 
             Margin="481,145,0,0" TextWrapping="Wrap" 
@@ -73,17 +76,18 @@
         <Button Content="Update" HorizontalAlignment="Left" 
             Height="29" Margin="283,208,0,0" VerticalAlignment="Top" Width="102"
             Background="WhiteSmoke"
-            FontFamily="Arial" Click="Button_Click"/>
+            FontFamily="Arial" />
         <Button Content="Delete" HorizontalAlignment="Left" 
                 Height="29" VerticalAlignment="Top" Width="102"
                 Background="WhiteSmoke"
-                FontFamily="Arial" Click="Button_Click" Margin="409,206,0,0"/>
-
+                FontFamily="Arial" Margin="409,206,0,0" Click="DeleteBtn_Click"/>
 
         <DataGrid x:Name="CategoryDG"
                       HorizontalAlignment="Center" Height="220" Margin="0,252,0,0" 
                       VerticalAlignment="Top" Width="562">
         </DataGrid>
+
+        
 
 
 

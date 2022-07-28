@@ -18,14 +18,10 @@ namespace WPFInventory
 {
     public partial class LOGIN : Window
     {
-        SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=C:\\Users\\Ashley\\source\\repos\\WPFInventory\\WPFInventory\\db_test.mdf;Integrated Security = True");
-        SqlCommand cmd = new SqlCommand();
-        SqlDataReader dr;
 
         public LOGIN()
         {
             InitializeComponent();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString.ToString();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -33,45 +29,36 @@ namespace WPFInventory
             DragMove();
 
         }
+        
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            if(con.State == System.Data.ConnectionState.Open)
+            using (SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Ashley\\source\\repos\\WPFInventory\\WPFInventory\\db_test.mdf;Integrated Security=True"))
             {
-                con.Close();
-            }
+                SqlCommand cmd = new SqlCommand("SELECT * FROM usertbl WHERE Username = '" + txtUsername.Text + "';", conn);
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["Password"].ToString() == txtPassword.Password.ToString())
+                        {
 
-            if(VerifyUser(txtUsername.Text, txtPassword.Password))
-            {
-                MessageBox.Show("Login Successfully.", "Welcome to the Inventory System.", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("Username or Password is Incorrect.", "Error Reading Database.", MessageBoxButton.OK, MessageBoxImage.Error);
+                            new MainWindow().Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Username/Password");
+                            txtUsername.Clear();
+                            txtPassword.Clear();
+                            txtUsername.Focus();
+                        }
+                    }
+                }
             }
         }
 
-        private bool VerifyUser(string UserName, string Password)
-        {
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT Status from usertbl WHERE UserName ='"+UserName+"' and Password = '" + Password + "'";
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                if (Convert.ToBoolean(dr["Status"]) == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
+
     }
 }

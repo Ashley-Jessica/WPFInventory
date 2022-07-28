@@ -9,6 +9,36 @@
              d:DesignWidth="700"
              Background="#388087">
     <Grid>
+        <DataGrid x:Name="DataGridProduct" HorizontalAlignment="Center" Margin="0,152,0,0" 
+                  VerticalAlignment="Top" Width="670" Height="313">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#6FB3B8"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+
+            </DataGrid.Resources>
             
+        </DataGrid>
+        <Rectangle HorizontalAlignment="Center" Height="76" VerticalAlignment="Top" 
+                   Width="700" Stroke="Black" Fill="#6FB3B8"/>
+        <TextBlock
+            Text="Products"
+            Foreground="White"
+            FontFamily="Bahnschrift Light Condensed"
+            FontSize="32"
+            HorizontalAlignment="Center"
+            Margin="0,23,0,440" FontWeight="Bold"/>
+        <Button Content="Remove" HorizontalAlignment="Left" 
+            Height="29" Margin="456,99,0,0" VerticalAlignment="Top" Width="102"
+            Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"
+            FontFamily="Bahnschrift SemiBold" FontSize="15"/>
+        <Button Content="Add / Edit" HorizontalAlignment="Left" 
+            Height="29" Margin="115,99,0,0" VerticalAlignment="Top" Width="102"
+            FontFamily="Bahnschrift SemiBold" FontSize="15" 
+                Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnadd_Click"/>
     </Grid>
 </UserControl>
